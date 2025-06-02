@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardín del Atlantico - Venta de Cactus por Juan David G.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo-principal">Jardín Del Atlantico</h1>
+        <p class="subtitulo"></p>
+    </header>
+
+    <main class="main-content">
+        <section class="grid-cactus">
+            <div class="cactus-card" data-id="cactus1">
+                <img src="imagenes/capctus1.jpeg" alt="Cactus Opuntia">
+                <h3>El cactus puyadura</h3>
+                <p class="precio">$15.000 Pesos</p>
+                <button class="btn-ver-mas">Ver más</button>
+            </div>
+            <div class="cactus-card" data-id="cactus2">
+                <img src="imagenes/cactus2.jpeg" alt="Cactus Echinopsis">
+                <h3>Esto no es un cactus</h3>
+                <p class="precio">$20.000 Pesos</p>
+                <button class="btn-ver-mas">Ver más</button>
+            </div>
+            <div class="cactus-card" data-id="cactus3">
+                <img src="imagenes/cactus3.jpeg" alt="Cactus Mammillaria">
+                <h3>cactus pelitoloco</h3>
+                <p class="precio">$18.000 Pesos</p>
+                <button class="btn-ver-mas">Ver más</button>
+            </div>
+            <div class="cactus-card" data-id="cactus4">
+                <img src="imagenes/cactus4.jpeg" alt="Cactus Ferocactus">
+                <h3>Cactus bolita e' nieve</h3>
+                <p class="precio">$25.000 Pesos</p>
+                <button class="btn-ver-mas">Ver más</button>
+            </div>
+            <div class="cactus-card" data-id="cactus5">
+                <img src="imagenes/cactus5.jpeg" alt="Cactus Gymnocalycium">
+                <h3>Cactus mil pies</h3>
+                <p class="precio">$17.000 Pesos</p>
+                <button class="btn-ver-mas">Ver más</button>
+            </div>
+            <div class="cactus-card" data-id="cactus6">
+                <img src="imagenes/cactus6.jpeg" alt="Cactus Notocactus">
+                <h3>Cactus coronita</h3>
+                <p class="precio">$22.000 Pesos</p>
+                <button class="btn-ver-mas">Ver más</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Hecho por <span class="nombre-creador">Juan David G.</span></p>
+        <p>&copy; 2025 Jardín del Desierto. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="modalCactus" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal">&times;</span>
+            <img id="modalImg" src="" alt="Cactus en detalle">
+            <h2 id="modalNombre"></h2>
+            <p id="modalInfo"></p>
+            <p id="modalCuidados"></p>
+            <p id="modalPrecio"></p>
+            <button id="btnComprar" class="btn-comprar">Comprar Cactus</button>
+        </div>
+    </div>
+
+    <div id="modalCompra" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-modal">&times;</span>
+            <h2>Información de Compra</h2>
+            <form id="formCompra">
+                <label for="nombreUsuario">Nombre Completo:</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+
+                <label for="direccion">Dirección de Envío:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit" class="btn-confirmar-compra">Confirmar Compra</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

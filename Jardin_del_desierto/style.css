@@ -1,0 +1,272 @@
+/* Importa la fuente para el nombre del creador */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+:root {
+    --color-fondo: #f5f5dc; /* Color arena clara */
+    --color-primario: #8B4513; /* Marrón tierra */
+    --color-secundario: #556B2F; /* Verde militar/oliva */
+    --color-texto: #333;
+    --color-acento: #A0522D; /* Siena */
+    --sombra-card: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+}
+
+.header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.titulo-principal {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitulo {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.nombre-creador {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    color: #ffffff(--color-secundario);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+    /* Animación sutil para el nombre */
+    animation: bounceText 2s infinite alternate;
+}
+
+@keyframes bounceText {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+
+.main-content {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-cactus {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.cactus-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.cactus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.cactus-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Para que las imágenes no se deformen */
+    border-bottom: 1px solid #eee;
+}
+
+.cactus-card h3 {
+    margin: 1em 0 0.5em;
+    color: var(--color-secundario);
+    font-size: 1.4em;
+}
+
+.cactus-card .precio {
+    font-weight: bold;
+    color: var(--color-acento);
+    font-size: 1.1em;
+    margin-bottom: 1em;
+}
+
+.btn-ver-mas {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+    background-color: #3e561e; /* Tono más oscuro */
+}
+
+.footer {
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 2em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos para los modales (ventanas emergentes) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Permanece en su lugar */
+    z-index: 1000; /* Se superpone a todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita el scroll si es necesario */
+    background-color: rgba(0,0,0,0.6); /* Fondo semi-transparente */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 20px; /* Espaciado interno */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-out; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cerrar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+#modalCactus img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+}
+
+#modalCactus h2 {
+    color: var(--color-secundario);
+    margin-top: 0;
+    font-size: 2em;
+}
+
+#modalCactus p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#modalCactus #modalInfo, #modalCactus #modalCuidados {
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#modalCactus #modalPrecio {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--color-acento);
+}
+
+.btn-comprar, .btn-confirmar-compra {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover, .btn-confirmar-compra:hover {
+    background-color: #8B3A2D; /* Tono más oscuro */
+}
+
+/* Estilos del formulario de compra */
+#modalCompra form {
+    display: flex;
+    flex-direction: column;
+}
+
+#modalCompra label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-secundario);
+}
+
+#modalCompra input[type="text"],
+#modalCompra input[type="tel"],
+#modalCompra input[type="email"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#modalCompra input:focus {
+    border-color: var(--color-acento);
+    outline: none;
+    box-shadow: 0 0 5px rgba(160, 82, 45, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2.5em;
+    }
+    .grid-cactus {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .main-content {
+        padding: 1em;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+}
